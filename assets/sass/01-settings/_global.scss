@@ -1,0 +1,201 @@
+/* Variables */
+
+// Vertical Rhythm Multiplier
+$baseline-unit: 12px;
+
+:root {
+	// Font Family
+	--global--font-primary: var(
+		--font-headings,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Oxygen-Sans,
+		Ubuntu,
+		Cantarell,
+		'Helvetica Neue',
+		sans-serif
+	);
+	--global--font-secondary: var(
+		--font-base,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Oxygen-Sans,
+		Ubuntu,
+		Cantarell,
+		'Helvetica Neue',
+		sans-serif
+	);
+
+	// Font Size
+	--global--font-size-xs: 0.75rem; //12px
+	--global--font-size-base: 1rem; //16px
+	--global--font-size-sm: 1.125rem; //18px
+	--global--font-size-md: 1.25rem; //20px
+	--global--font-size-lg: 1.5rem; //24px
+	--global--font-size-xl: 2.25rem; //36px
+	--global--font-size-2xl: 4rem; //64px
+	--global--font-size-3xl: 5rem; //80px
+	--global--font-size-page-title: var(--global--font-size-2xl);
+	--global--letter-spacing: normal;
+
+	// Line height
+	--global--line-height-body: 1.5;
+	--global--line-height-heading: 1.3;
+	--global--line-height-page-title: 1.1;
+
+	// Headings
+	--heading--font-family: var(--global--font-primary);
+
+	--heading--font-size-h6: var(--global--font-size-xs);
+	--heading--font-size-h5: var(--global--font-size-sm);
+	--heading--font-size-h4: var(--global--font-size-lg);
+	--heading--font-size-h3: calc(1.25 * var(--global--font-size-lg));
+	--heading--font-size-h2: var(--global--font-size-xl);
+	--heading--font-size-h1: var(--global--font-size-page-title);
+
+	--heading--letter-spacing-h6: 0.05em;
+	--heading--letter-spacing-h5: 0.05em;
+	--heading--letter-spacing-h4: var(--global--letter-spacing);
+	--heading--letter-spacing-h3: -0.03em;
+	--heading--letter-spacing-h2: -0.05em;
+	--heading--letter-spacing-h1: -0.05em;
+
+	--heading--line-height-h6: var(--global--line-height-heading);
+	--heading--line-height-h5: var(--global--line-height-heading);
+	--heading--line-height-h4: var(--global--line-height-heading);
+	--heading--line-height-h3: var(--global--line-height-heading);
+	--heading--line-height-h2: var(--global--line-height-heading);
+	--heading--line-height-h1: var(--global--line-height-page-title);
+
+	--heading--font-weight: normal;
+	--heading--font-weight-page-title: 700;
+	--heading--font-weight-strong: 600;
+
+	// Block: Latest posts
+	--latest-posts--title-font-family: var(--heading--font-family);
+	--latest-posts--title-font-size: var(--heading--font-size-h3);
+	--latest-posts--description-font-family: var(--global--font-secondary);
+	--latest-posts--description-font-size: var(--global--font-size-sm);
+
+	--list--font-family: var(--global--font-secondary);
+	--definition-term--font-family: var(--global--font-primary);
+
+	// Colors
+	// Utilities
+	--global--color-black: hsl(0, 0%, 0%);
+	--global--color-dark-gray: hsl(217, 21%, 20%);
+	--global--color-gray: hsl(216, 15%, 26%);
+	--global--color-light-gray: hsl(0, 0%, 94%);
+	--global--color-green: hsl(158, 26%, 86%);
+	--global--color-blue: hsl(196, 26%, 86%);
+	--global--color-purple: hsl(240, 26%, 86%);
+	--global--color-red: hsl(0, 26%, 86%);
+	--global--color-orange: hsl(28, 26%, 86%);
+	--global--color-yellow: hsl(46, 33%, 90%);
+	--global--color-white: hsl(0, 0%, 100%);
+
+	// Accent
+	--global--color-primary: var(--global--color-purple);
+	--global--color-secondary: var(--global--color-yellow);
+
+	// Body text color
+	--global--color-text: var(--global--color-dark-gray);
+	--global--color-headings: var(--global--color-black);
+	--global--color-primary-hover: var(--global--color-primary);
+	--global--color-secondary-hover: var(--global--color-secondary);
+
+	// Mint, default body background
+	--global--color-background: var(--global--color-white);
+
+	// Used for borders (separators)
+	--global--color-border: var(--global--color-light-gray);
+
+	// Spacing
+	--global--spacing-unit: #{2 * $baseline-unit}; // 24px
+	--global--spacing-measure: unset; // Use ch units here. ie: 60ch = 60 character max-width
+	--global--spacing-horizontal: #{2.5 * $baseline-unit}; // 30px
+	--global--spacing-vertical: #{3 * $baseline-unit}; // 36px.
+
+	// Elevation
+	--global--elevation: 1px 1px 3px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+/**
+ * Reset specific elements to make them easier to style in other contexts.
+ */
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+form,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Apply generic border-box to all elements.
+ * See:
+ * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+html {
+	/* Apply border-box across the entire page. */
+	box-sizing: border-box;
+
+	// HTML resets
+	font-family: var(--global--font-secondary);
+	line-height: var(--global--line-height-body);
+}
+
+/**
+ * Relax the definition a bit, to allow components to override it manually.
+ */
+* {
+	&,
+	&::before,
+	&::after {
+		box-sizing: inherit;
+	}
+}
+
+// body resets
+body {
+	font-size: var(--global--font-size-base);
+	font-weight: normal;
+	color: var(--global--color-primary);
+	text-align: left;
+	background-color: var(--global--color-white);
+}
+
+button {
+	cursor: pointer;
+}
+::placeholder {
+	color: gray;
+}
